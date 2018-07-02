@@ -8,10 +8,7 @@ class Request(object):
         self.getenv_ = getenv
         self.populate_options_()
         self.populate_args_()
-        if sys.stdin.isatty() == False:
-            self.input = json.load(sys.stdin)
-        else:
-            self.input = {}
+        self.input = {}
         self.service_key = self.getenv_("COG_SERVICE_TOKEN")
         self.step = self.getenv_("COG_INVOCATION_STEP", None)
 
