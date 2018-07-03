@@ -30,7 +30,7 @@ except ImportError as e:
     if len(command_name)==0:
         fail("ERROR: COG_COMMAND env var is set but empty")
     else:
-        fail('ERROR: Unable to import module "' + str(full_path) + '"')
+        fail(e)
 
 klass = getattr(bundle_module, class_name)
 cmd = klass()
